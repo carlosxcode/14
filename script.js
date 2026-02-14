@@ -39,12 +39,12 @@ yesButton.addEventListener('click', () => {
   gridContainer.classList.add('image-grid');
 
   const images = [
-    'img/foto7.jpg',
-    'img/foto3.jpg',
-    'img/foto1.jpg',
-    'img/foto4.jpg',
-    'img/foto5.jpg',
-    'img/foto6.jpg',
+    'https://images.fineartamerica.com/images/artworkimages/medium/3/1-snoopy-woodstock-love-darrell-c-rose-transparent.png',
+    'https://dtfdallas.com/cdn/shop/files/a_5-602837.png?v=1720257035',
+    'https://images.fineartamerica.com/images/artworkimages/medium/3/snoopy-love-wayne-k-roark-transparent.png',
+    'https://i.pinimg.com/originals/36/b2/c3/36b2c356acab57ef56a08c5572361b2d.png',
+    'https://images.fineartamerica.com/images/artworkimages/medium/3/snoopy-love-derek-b-mcdaniel-transparent.png',
+    'https://images.fineartamerica.com/images/artworkimages/medium/3/snoopy-joe-cool-grace-a-waldo-transparent.png',
   ];
 
   images.forEach((src) => {
