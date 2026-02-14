@@ -1,0 +1,224 @@
+/* ====== FONDO GENERAL ====== */
+body {
+    font-family: 'Segoe UI', 'Arial', sans-serif;
+    background: linear-gradient(135deg, #ff9a9e, #fecfef, #fad0c4);
+    background-size: 400% 400%;
+    animation: fondoAnimado 12s ease infinite;
+    color: #c2185b;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow-y: auto;
+}
+
+/* Animación del fondo */
+@keyframes fondoAnimado {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* ====== CONTENEDOR PRINCIPAL ====== */
+.container {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 25px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+    max-width: 90%;
+    width: 800px;
+    margin: 20px 0;
+    transition: transform 0.3s ease;
+}
+
+.container:hover {
+    transform: scale(1.02);
+}
+
+/* ====== TÍTULO ====== */
+h1 {
+    font-size: 2.7rem;
+    margin-bottom: 20px;
+    background: linear-gradient(45deg, #ff4081, #ff6ec4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* ====== PÁRRAFOS ====== */
+p {
+    font-size: 1.3rem;
+    margin: 12px 0;
+}
+
+.question {
+    font-size: 1.7rem;
+    font-weight: bold;
+    margin: 25px 0;
+    color: #d81b60;
+}
+
+/* ====== BOTONES ====== */
+.buttons {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+button {
+    font-size: 1.2rem;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+#yesButton {
+    background: linear-gradient(45deg, #ff1744, #ff6f91);
+    color: white;
+}
+
+#yesButton:hover {
+    transform: scale(1.15);
+    box-shadow: 0 8px 20px rgba(255, 0, 80, 0.5);
+}
+
+#noButton {
+    background: #ffffff;
+    color: #d32f2f;
+    border: 2px solid #ff6f91;
+    transition: transform 0.5s ease;
+}
+
+#noButton:hover {
+    transform: scale(1.1);
+}
+
+/* ====== RESPUESTA ====== */
+#response {
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin-top: 25px;
+    color: #c2185b;
+    animation: slideIn 1s ease-out;
+}
+
+/* ====== IMÁGENES ====== */
+#imageContainer {
+    margin-top: 20px;
+}
+
+#imageContainer img {
+    max-width: 220px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    margin-top: 15px;
+    transition: transform 0.3s ease;
+}
+
+#imageContainer img:hover {
+    transform: scale(1.08);
+}
+
+/* ====== GRID DE IMÁGENES ====== */
+.image-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    animation: fadeIn 1s ease-out;
+}
+
+.image-grid img {
+    width: calc(50% - 15px);
+    height: 320px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* Ajuste para pantallas grandes */
+@media (min-width: 768px) {
+    .image-grid img {
+        width: calc(33.33% - 15px);
+    }
+}
+
+/* ====== ANIMACIONES ====== */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ====== DARK MODE ====== */
+body.dark-mode {
+    background: linear-gradient(135deg, #1e1e1e, #2c2c2c);
+    color: #ffffff;
+}
+
+body.dark-mode .container {
+    background: rgba(40, 40, 40, 0.9);
+    color: #ffffff;
+}
+
+body.dark-mode #yesButton {
+    background: linear-gradient(45deg, #ff4d4d, #ff758c);
+}
+
+body.dark-mode #noButton {
+    background: #555;
+    color: white;
+    border: none;
+}
+
+body.dark-mode #imageContainer img,
+body.dark-mode .image-grid img {
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2);
+}
+
+/* ===== CORAZONES FLOTANDO ===== */
+.heart {
+    position: fixed;
+    bottom: -10px;
+    font-size: 20px;
+    animation: floatUp 6s linear infinite;
+    color: #ff4d6d;
+    opacity: 0.8;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh) scale(1.5);
+        opacity: 0;
+    }
+}
+
+/* Explosión */
+.explosion-heart {
+    position: fixed;
+    font-size: 25px;
+    animation: explode 1s ease-out forwards;
+}
+
+@keyframes explode {
+    to {
+        transform: translate(var(--x), var(--y));
+        opacity: 0;
+    }
+}
+
